@@ -1,0 +1,30 @@
+aws_region: us-east-2
+
+# Ubuntu Server 18.04 LTS (HVM), SSD Volume Type
+ami_id: ami-0a63f96e85105c6d3
+
+# Instance type
+instance_type: t2.micro
+
+# Key pair name
+key_name: my_key
+
+# Tags
+tags_used: my_aws 
+
+# CIDR Range
+cidr_range: ::/32
+
+# VPC Information
+vpc_name: my_aws
+vpc_cidr_block: 10.0.0.0/16
+
+# For Security Group Rule
+my_ip_range: ::/32
+
+# Subnets
+public_subnet_1_cidr:  10.0.0.0/20
+
+# VPC Id
+vpc_id: vpc-*
+vpc_subnet_id: subnet-770c653b
