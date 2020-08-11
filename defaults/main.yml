@@ -2,7 +2,7 @@
 #create_ec2instnce
 instance_type: t2.micro
 security_group: aws_ansible
-image: ami-0a63f96e85105c6d3
+image: ami-0bbe28eb2173f6167
 keypair: key
 region: us-east-2
 count: 1
