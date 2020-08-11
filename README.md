@@ -8,20 +8,14 @@
     - key_name: назва key pairs. Його ми створили раніше.
 7. У файл ./defaults/main.yml потрібно вказати повний шлях до ключа:
     - ansible_ssh_private_key_file: ./key/some_key.pem
-8. У файл ./ansible/info/aws-credentials.yml потрібно вказати:
-    - AWS_ACCESS_KEY_ID: Вашого акаунту.
-    - AWS_SECRET_ACCESS_KEY: Ваошго акаунту.
-9. Переходимо в корінь репозиторію та виконуємо команду:
-    ansible-playbook ./ansible/provision.yml -i hosts
+8. Виконати команду aws configure:
+    - AWS Access Key ID: Вашого акаунту.
+    - AWS Secret Access Key: Вашого акаунту.
+    - Default region name: на Ваш вибір (у мене us-east-2)
+    - Default output format: на Ваш вибір ( у мене json)
 
-10. Після того як інстанс створений заходимо в Elastic IP та асоціємо його з активним Instance.
-11. У файлі ./hosts.txt потрібно вказати Elastic IP.
-12. В корені репозиторію та виконуємо команду:
-    - ansible-playbook ./playbook.yml
-13. Після запуску команди [У квадратних дужках вказане значення за замовчуванням]:
-    - server_name_for_nginx: потрібно вказати Elastic IP;
-    - WP_version: можна вписати свою, або залишити за замовчуванням ( просто натиснути клавішу Enter);
-    - DB_name: можна вписати свою, або залишити за замовчуванням ( просто натиснути клавішу Enter);
-    - table_Prefix: можна вписати свій, або залишити за замовчуванням ( просто натиснути клавішу Enter);
-    - WP_DB_password: можна вписати свій, або залишити за замовчуванням ( просто натиснути клавішу Enter);
-    - підтвердження:
+9. Переходимо в корінь репозиторію та виконуємо команду:
+    - bash ./deploy.sh 
+10. Важливо! На етапі server_name_for_nginx: потрібно вказати Public IP вашого інстансу.
+    - Скопіюйте йогоз файлу ./hosts.txt ansible_host= <Ваш Publick IP>.
+11. Перейдіть на сайт :)
