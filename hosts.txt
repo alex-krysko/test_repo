@@ -1,2 +1,0 @@
-[wordpress]
-ip_or_domain_your_server    ansible_host=18.224.132.250
