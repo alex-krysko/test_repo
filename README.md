@@ -5,7 +5,7 @@
 4. python boto
 5. Потрібно зайти в акаунт aws та ствоити Key pairs. Ключ потрібно зберегти та покласти до папки key.
 6. У файл ./defaults/main.yml потрібно змінити поле:
-    - key_name: назва key pairs. Його ми створили раніше.
+    - keypair: назва key pairs. Його ми створили раніше.
 7. У файл ./defaults/main.yml потрібно вказати повний шлях до ключа:
     - ansible_ssh_private_key_file: ./key/some_key.pem
 8. Виконати команду aws configure:
