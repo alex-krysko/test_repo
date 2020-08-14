@@ -1,0 +1,48 @@
+---
+- hosts: wordpress
+
+  vars_files:
+    - defaults/main.yml
+
+  remote_user: "{{ system_user }}"
+  become: yes
+  gather_facts: no
+  serial: 1
+
+  vars_prompt:
+
+    - name: domain
+      prompt: "\n------
+              \n\n server_name_for_nginx"
+      private: no
+      default: "192.168.0.201"
+
+    - name: wp_version
+      prompt: "\n------
+              \n\nWP_version"
+      private: no
+      default: "4.7.5"
+
+    - name: wp_db_name
+      prompt: "\n------
+              \n\nDB_name"
+      private: no
+      default: "wordpress"
+
+    - name: wp_db_tb_pre
+      prompt: "\n------
+              \n\ntable_Prefix"
+      private: no
+      default: "wp_"
+
+    - name: wp_db_psw
+      prompt: "\n------
+              \n\nWP_DB_password"
+      private: yes
+      default: "DReyK009"
+      confirm: yes
+
+  roles:
+  - python
+  - docker
+  - wordpress-docker
