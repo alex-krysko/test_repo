@@ -1,0 +1,18 @@
+---
+#create_ec2instnce
+instance_type: t2.micro
+security_group: aws_ansible
+image: ami-0bbe28eb2173f6167
+keypair: <key pair name>
+region: us-east-2
+count: 1
+#wordpress
+system_user: ubuntu
+compose_project_dir: /home/{{ system_user }}/compose-wordpress
+ansible_ssh_private_key_file: ./key/<key pair name>.pem
+ansible_sudo_pass: DReyK009
+wp_version: 4.7.5
+wp_db_name: wordpress
+wp_db_tb_pre: wp_
+wp_db_host: mysql
+wp_db_psw: DReyK009
